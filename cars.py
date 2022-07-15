@@ -60,11 +60,11 @@ class Cars:
                     j += 1
             self.right_cars_list.append(self.car)
 
-    def move_cars(self):
+    def move_cars(self, car_speed):
         for i in range(len(self.left_cars_list)):
-            self.left_cars_list[i].forward(self.car_speed)
+            self.left_cars_list[i].forward(car_speed)
         for i in range(len(self.right_cars_list)):
-            self.right_cars_list[i].forward(self.car_speed)
+            self.right_cars_list[i].forward(car_speed)
         for i in range(len(self.left_cars_list)):
             if self.left_cars_list[i].xcor() < self.screen_size[0] / -2:
                 self.left_cars_list[i].goto(x=int((self.screen_size[0] / 2)), y=self.left_cars_list[i].ycor())

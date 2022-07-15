@@ -1,7 +1,6 @@
 import turtle
 from turtle import Turtle, Screen
 import time
-import Score_board
 
 
 class Player:

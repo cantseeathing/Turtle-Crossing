@@ -3,9 +3,9 @@ import Score_board
 import cars
 
 SCREEN_SIZE = (800, 600)
-TIME_DELAY = 0.001
+TIME_DELAY = 0.0001
 TURTLE_INCREMENTS = 25
-INITIAL_CARS = 1
+INITIAL_CARS = 5
 CAR_SPEED = 1
 GAME_ON = True
 
@@ -16,10 +16,10 @@ car_objects.create_cars(initial_cars=INITIAL_CARS)
 player_object.screen_update()
 
 player_object.screen.listen()
-player_object.screen.onkey(key="a", fun=player_object.player_move_left)
-player_object.screen.onkey(key="d", fun=player_object.player_move_right)
-player_object.screen.onkey(key="w", fun=player_object.player_move_up)
-player_object.screen.onkey(key="s", fun=player_object.player_move_down)
+player_object.screen.onkey(key="Left", fun=player_object.player_move_left)
+player_object.screen.onkey(key="Right", fun=player_object.player_move_right)
+player_object.screen.onkey(key="Up", fun=player_object.player_move_up)
+player_object.screen.onkey(key="Down", fun=player_object.player_move_down)
 
 
 while GAME_ON:
@@ -29,7 +29,7 @@ while GAME_ON:
         player_object.game_lost()
         GAME_ON = False
     else:
-        car_objects.move_cars()
+        car_objects.move_cars(car_speed=CAR_SPEED)
         win = player_object.win_condition()
         if win:
             score.update_score()

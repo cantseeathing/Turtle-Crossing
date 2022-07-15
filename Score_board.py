@@ -1,7 +1,6 @@
 from turtle import Turtle
 
 
-
 class Score:
     def __init__(self, screen_size):
         self.game_over_banner = Turtle()
